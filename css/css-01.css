@@ -1,0 +1,67 @@
+/* comment css */
+/* trinh duyet se bo qua ma lenh trong nay */
+/* HTML selector */
+h2.title {
+    color: red;
+}
+/* id selector */
+/* #title {
+    color: yellow;
+} */
+
+/* class selector */
+.title {
+    color: blue;
+}
+p.text.text-color {
+    color: red;
+}
+input[type='email'] {
+    border: 3px solid red;
+}
+button[class*="btn-"] {
+    color: blue;
+    background-color: red;
+}
+a[href^='https'] {
+    color: red;
+}
+a[href$='org'] {
+    color: pink;
+}
+div[class|='content']{
+    width: 300px;
+    height: 300px;
+    background-color:yellow;
+}
+p.text ~ h5.info-text-2 {
+    color: blue;
+}
+
+header.header > div.banner + div.logo > div.content img.big-logo {
+    width: 300px;
+    height: 300px;
+}
+/* gom nhom selector */
+/* .a, .b {
+    color: blue;
+} */
+
+section.content :first-child {
+    color: blue;
+}
+section.content :first-of-type {
+    color: red;
+}
+section.content :last-child {
+    color: pink;
+}
+section.content :last-of-type {
+    color: violet;
+}
+section.content :nth-child(3) {
+    color: yellow;
+}
+section.content :nth-last-of-type(1) {
+    color: orange;
+}
