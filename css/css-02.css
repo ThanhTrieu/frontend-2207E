@@ -1,0 +1,49 @@
+:root {
+    /* khai bao bien css */
+    --colorText: blue;
+}
+
+div.container :only-child {
+    /* su dung bien css */
+    color: var(--colorText);
+}
+
+input[type='text']:focus{
+    width: 300px;
+    height: 50px;
+    border: 1px solid red;
+    outline: none;
+}
+input[type='checkbox']:checked {
+    width: 150px;
+    height: 150px;
+}
+a[href^='http']:active {
+    color: yellow;
+}
+a[href^='http']:visited{
+    color: red;
+}
+a[href^='http']:link{
+    color: pink;
+}
+a[href^='http']:hover{
+    color: violet;
+    text-decoration: none;
+}
+p.text::first-letter{
+    color:red;
+    font-size:30px;
+}
+p.text::first-line{
+    color:blue;
+}
+/* override */
+p.text::before {
+    /* content: "Hi"; 
+    */
+   content: url('../images/favicon.ico');
+}
+p.text::selection{
+    color: yellow;
+}
