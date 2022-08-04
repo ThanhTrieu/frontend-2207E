@@ -1,0 +1,71 @@
+/* reset css */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    /* chrome & safari */
+    -webkit-box-sizing: border-box;
+    /* firefox */
+    -moz-box-sizing: border-box;
+    /* microsoft */
+    -ms-box-sizing: border-box;
+    /* oprea */
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    /* su dung don vi css theo ti le font chu */
+}
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+}
+/* css common */
+a {
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+input, textarea, button{
+    outline: none;
+    box-shadow: none;
+    font-family: 'Lato', sans-serif;
+}
+/* bien css */
+:root{
+    --primaryColor: #65c29e;
+    --headingColor: #353738;
+    --textColor: #848789;
+    --bgLight: #f7f7f7;
+    --bgWhite: #ffffff;
+}
+/* warper */
+.warper{
+    max-width: 160rem;
+    margin: 0 auto;
+}
+.header{
+    min-height: 80rem;
+    background-image: url('../images/bg-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.nav {
+    margin-top: 3.5rem;
+}
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+.nav__item {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+}
