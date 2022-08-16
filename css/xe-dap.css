@@ -8,7 +8,7 @@
     -moz-box-sizing: border-box;
     /* microsoft */
     -ms-box-sizing: border-box;
-    /* oprea */
+    /* opera */
     -o-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -105,6 +105,7 @@ input, textarea, button{
     word-spacing: 1.2rem;
     color: var(--headingColor);
     line-height:1.6;
+    text-align: center;
 }
 .feature__header--desc{
     color: var(--textColor);
@@ -112,4 +113,157 @@ input, textarea, button{
     line-height: 1.6;
     max-width: 108rem;
     margin: 0 auto;
+}
+.feature__item{
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    height: 60rem;
+    /* khong xuat hien thanh scroll ngang hoac doc */
+    overflow: hidden;
+}
+/* css cot ben trai */
+.feature__item--img {
+    width:67%;
+    position: relative;
+}
+/* css cot ben phai */
+.feature__item--content{
+    width: 33%;
+}
+/* anh nam ben trong cot ben trai */
+.feature__item .img_bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* anh logo nam trong cot ben trai - de len anh to */
+.feature__item .img_brand{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.feature__item--content{
+    height: 100%;
+    display: flex;
+    /* cot ben tren va ben duoi nam theo 1 cot doc */
+    flex-direction: column;
+    justify-content:space-between;
+}
+/* css cho cot ben tren nam trong cot ben phai */
+.feature__item--content-top{
+    background-color: var(--bgWhite);
+    padding: 0 6.8rem;
+    height: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.feature__item--text{
+    font-size:1.6rem;
+    color: var(--textColor);
+    line-height: 1.6;
+    text-align:justify;
+    padding-bottom: 4rem;
+    position: relative;
+}
+/* tao css dau gach ngang ben duoi the p */
+.feature__item--text::after{
+    content: "";
+    position: absolute;
+    width: 5rem;
+    background-color: #d7d7d7;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* tao arrow css */
+.feature__item--content-top::after{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bgWhite);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    z-index: 10;
+}
+/* css cho cot ben duoi nam trong cot ben phai */
+.feature__item--content-bottom{
+    height: 33%;
+}
+/* doi vi tri cot ben trai va ben phai cho nhau o li thu 2 */
+.feature__item:nth-child(2) .feature__item--img {
+    order: 2;
+}
+/* xu ly css cho cac thanh phan o li cuoi cung */
+.feature__item:last-child > .feature__item--img{
+    width: 33%;
+}
+.feature__item:last-child > .feature__item--content{
+    width: 34%;
+}
+/* css twitter */
+.twitter{
+    background-color: var(--bgLight);
+    text-align: center;
+    padding: 12.4rem 1.5rem 6.5rem;
+}
+.twitter__icon {
+    font-size:3.2rem;
+    color: #56c7ee;
+    margin-bottom: 3.6rem;
+}
+.twitter__heading{
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+.twitter__location, .twitter__author{
+    color: var(--headingColor);
+    font-weight: 700;
+}
+.twitter__time{
+    color: var(--textColor);
+    font-weight: 300;
+    position: relative;
+    margin-left: 1.4rem;
+    padding-left: 1.4rem;
+}
+.twitter__time::before{
+    content: "/";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(0px);
+    color: var(--textColor);
+}
+.twitter__content{
+    font-size: 2.4rem;
+    color: var(--textColor);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 auto 10.4rem ;
+    max-width: 100rem;
+}
+.twitter__pagination{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.twitter__pagination--item{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: thin solid var(--textColor);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.twitter__pagination--item.is__active{
+    background-color: var(--textColor);
 }
