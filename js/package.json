@@ -1,0 +1,10 @@
+{
+  "name": "learning_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "trieunt",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
+}
