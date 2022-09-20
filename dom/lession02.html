@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h5>Kiem tra so nguyen to</h5>
+        <label for="number">Moi nhap so</label>
+        <input type="text" id="number" />
+        <p id="error"></p>
+        <br>
+        <button type="button" id="btnCheck">Kiem tra</button>
+        <h5 id="result"></h5>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("btnCheck").addEventListener('click', function(){
+            //alert("hiiii");
+            const input = document.getElementById("number");
+            const error = document.getElementById("error");
+            const result = document.getElementById("result");
+
+            let valInput = input.value.trim();
+            if(!isNaN(valInput) && valInput.length > 0){
+                // thuc su la so
+                // an het loi
+                error.innerHTML = '';
+                if(valInput <= 1){
+                    result.innerHTML = 'Khong phai so nguyen to';
+                } else {
+                    let flagCheck = true;
+                    for(let i = 2; i <= Math.sqrt(valInput); i++){
+                        if(valInput % i == 0){
+                            flagCheck = false;
+                            break; 
+                        }
+                    }
+                    // thong bao ket qua
+                }
+            } else {
+                // ko phai so
+                // thong bao loi
+                error.innerHTML = 'Nhap so ban ei';
+                error.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

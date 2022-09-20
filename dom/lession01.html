@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .btn-primary {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickMe" class="btn btn-primary">click me</button>
+    <br/>
+    <button id="clickMe2" class="btn btn-primary">click me2</button>
+    <br/>
+    <input type="text" class="form-control" />
+    <br/>
+    <img src="../images/icon-1.png" />
+    <br/>
+    <select class="from-select">
+        <option value="">Chon tinh thanh</option>
+        <option value="29">Ha Noi</option>
+        <option value="15">Hai Phong</option>
+    </select>
+
+    <br/>
+    <button type="button" onclick="myClick(this);"> Click me 3</button>
+    <br/>
+    <textarea onkeyup="myKeyup(this);"></textarea>
+    <br/>
+    <h1 id="title"> Dang hoc JS DOM</h1>
+    <div class="box"></div>
+
+    <button id="clickme4" onclick="changeContent();"> click me 4</button>
+    <button id="clickme5" onclick="removeCSS();"> click me 5</button>
+
+    <script type="text/javascript">
+        function removeCSS() {
+            document.getElementsByClassName('box')[0].style = '';
+        }
+        function changeContent(){
+            const title = document.getElementById('title');
+            // lay ra
+            console.log(title.innerHTML);
+            // thay doi
+            title.innerHTML = 'Dang hoc ReactJS';
+            //document.getElementsByTagName('img')[0].src = '../images/icon-3.png';
+            document.getElementsByTagName('img')[0].setAttribute('src', '../images/icon-3.png');
+
+            const box = document.getElementsByClassName('box')[0];
+            box.style.width = '300px';
+            box.style.height = '300px';
+            box.style.backgroundColor = 'yellow';
+            box.style.marginBottom = '10px';
+        }
+        function myKeyup(obj){
+            console.log(obj.value);
+        }
+
+        function myClick(obj){
+            alert("Hello you");
+            console.log(obj.innerHTML);
+        }
+        let button = document.getElementById("clickMe");
+        //console.log(button);
+        let button2 = document.getElementsByClassName('btn');
+        //console.log(button2[1]);
+        let button3 = document.getElementsByTagName('button');
+        //console.log(button3[1]);
+        let button4 = document.querySelector('.btn-primary');
+        //console.log(button4);
+        let button5 = document.querySelectorAll('.btn-primary');
+        //console.log(button5[1]);
+
+        /******** bat su kien js *********/
+        button5[1].onclick = function() {
+            // bat su kien click vao button
+            alert('ban vua click vao toi');
+        }
+        button5[0].addEventListener('click', function(){
+            alert('Hi you');
+        });
+
+        const input = document.getElementsByClassName('form-control');
+        input[0].onchange = function() {
+            console.log(this);
+            let content = this.value;
+            console.log(content);
+        }
+        input[0].addEventListener('keyup', function(){
+            console.log(this.value);
+        });
+        button.addEventListener('mousedown', function(){
+            console.log('su kien mouse down vua xay ra');
+        });
+        const image = document.getElementsByTagName('img');
+        image[0].onmouseover = function() {
+            this.width = 500;
+            this.height = 500;
+        }
+        image[0].onmouseout = function() {
+            this.width  = 100;
+            this.height = 100;
+        }
+        const select = document.getElementsByClassName('from-select');
+        select[0].addEventListener('change', function(){
+            console.log(this.value);
+        })
+    </script>
+</body>
+</html>
