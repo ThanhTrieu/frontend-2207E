@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giai PTBH</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="hsa">He so A</label>
+            <input type="text" id="hsa" />
+            <p id="errHsa"></p>
+        </div>
+        <div class="form-group">
+            <label for="hsb">He so B</label>
+            <input type="text" id="hsb" />
+            <p id="errHsb"></p>
+        </div>
+        <div class="form-group">
+            <label for="hsc">He so C</label>
+            <input type="text" id="hsc" />
+            <p id="errHsc"></p>
+        </div>
+        <button id="btnGiaiPT">Giai PT</button>
+        <h2 id='result'></h2>
+    </div>
+    <script type="text/javascript">
+        function tinhDelta(a,b,c){
+            return (b*b) - (4*a*c);
+        }
+        function kiemTraDL(valInput, objInput, objError){
+
+        }
+        document.getElementById('btnGiaiPT').onclick = function(){
+            const hsa = document.getElementById('hsa');
+            const hsb = document.getElementById('hsb');
+            const hsc = document.getElementById('hsc');
+            const errHsa = document.getElementById('errHsa');
+            const errHsb = document.getElementById('errHsb');
+            const errHsc = document.getElementById('errHsc');
+            const result = document.getElementById('result');
+            let valHsa = hsa.value.trim();
+            let valHsb = hsb.value.trim();
+            let valHsc = hsc.value.trim();
+
+            let chkHsa, chkHsb, chkHsc = null;
+            if(!isNaN(valHsa) && valHsa.length > 0){
+                valHsa = Number.parseFloat(valHsa);
+                if(valHsa === 0){
+                    chkHsa = false;
+                    // thong bao loi ko dc nhap bang 0 he so a
+                    errHsa.innerHTML = 'He so a phai khac 0';
+                    hsa.style.border = '1px solid red';
+                } else {
+                    chkHsa = true;
+                    // xoa bo loi nhap bang 0 he so a
+                    errHsa.innerHTML = '';
+                    hsa.removeAttribute('style');
+                }
+            } else {
+                // thong bao loi ko phai so
+                chkHsa = false;
+                errHsa.innerHTML = 'Vui long nhap so';
+                hsa.style.border = '1px solid red';
+            }
+
+        }
+    </script>
+</body>
+</html>

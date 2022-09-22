@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM JS</title>
+</head>
+<body>
+    <button type="button" id="window" onclick="getWidthHeight();"> lay kich thuoc khung trinh duyet</button>
+
+    <button onclick="openWindow();"> open window</button>
+    <button onclick="closeWindow();"> close window</button>
+    <button onclick="reloadPage();">Reload page</button>
+    <button onclick="goToLink()"> go to link</button>
+    <button onclick="saveLocalStorage();"> save local storage</button>
+    <button onclick="getDataLocalStorage();"> get data local storage</button>
+
+    <button onclick="getScreen();"> get screen </button>
+    <a href="lession05.html"> go to lession05.html</a>
+
+    <script type="text/javascript">
+        function getScreen(){
+            let wS = screen.width;
+            let hS = screen.height;
+            console.log(wS, hS);
+        }
+        function getDataLocalStorage(){
+            let dataUser = window.localStorage.getItem('user');
+            if(dataUser !== null){
+                dataUser = JSON.parse(dataUser);
+                console.log(dataUser.email)
+            }
+            
+        }
+        function saveLocalStorage(){
+            let dataUser = {id: 1, email: 'data@example.com'}
+            window.localStorage.setItem('user', JSON.stringify(dataUser));
+        }
+
+        function goToLink() {
+            window.location.href = 'https://facebook.com';
+        }
+        function reloadPage(){
+            window.location.reload(true);
+        }
+        function closeWindow() {
+            window.close();
+        }
+        function openWindow() {
+            window.open('https://vnexpress.net/','vnexpress','width=150,height=150');
+        }
+        function getWidthHeight(){
+            let w = window.innerWidth;
+            let h = window.innerHeight;
+            alert(`w: ${w} - h: ${h}`);
+        }
+    </script>
+</body>
+</html>
